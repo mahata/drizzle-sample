@@ -58,3 +58,7 @@ temp/
 # Logs
 logs
 *.log
+
+# Database files
+database.sqlite
+database.sqlite-*

@@ -1,12 +1,21 @@
+import { desc } from "drizzle-orm";
 import { Hono } from "hono";
+import { db } from "./db/index.ts";
+import { runMigrations } from "./db/migrate.ts";
+import { messages as messagesTable } from "./db/schema.ts";
 
 const app = new Hono();
 
-// In-memory storage for messages during the session
-const messages: string[] = [];
+// Run migrations on startup
+runMigrations();
 
 // Root page with form
-app.get("/", (c) => {
+app.get("/", async (c) => {
+  const messages = await db
+    .select()
+    .from(messagesTable)
+    .orderBy(desc(messagesTable.createdAt));
+
   return c.html(
     <html lang="en">
       <head>
@@ -49,9 +58,12 @@ app.get("/", (c) => {
           {messages.length === 0 ? (
             <p>No messages yet. Submit a message above!</p>
           ) : (
-            messages.map((message, index) => (
-              <div key={`msg-${index}-${message.slice(0, 10)}`} class="message">
-                {message}
+            messages.map((message) => (
+              <div
+                key={`msg-${message.id}-${message.messageString.slice(0, 10)}`}
+                class="message"
+              >
+                {message.messageString}
               </div>
             ))
           )}
@@ -104,8 +116,14 @@ app.post("/submit", async (c) => {
   const message = body.get("message") as string;
 
   if (message?.trim()) {
-    messages.push(message.trim());
+    await db.insert(messagesTable).values({ messageString: message.trim() });
   }
+
+  // Fetch updated messages from database
+  const messages = await db
+    .select()
+    .from(messagesTable)
+    .orderBy(desc(messagesTable.createdAt));
 
   // Return just the messages area HTML
   return c.html(
@@ -114,9 +132,12 @@ app.post("/submit", async (c) => {
       {messages.length === 0 ? (
         <p>No messages yet. Submit a message above!</p>
       ) : (
-        messages.map((message, index) => (
-          <div key={`msg-${index}-${message.slice(0, 10)}`} class="message">
-            {message}
+        messages.map((message) => (
+          <div
+            key={`msg-${message.id}-${message.messageString.slice(0, 10)}`}
+            class="message"
+          >
+            {message.messageString}
           </div>
         ))
       )}
