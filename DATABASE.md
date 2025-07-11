@@ -7,18 +7,18 @@ This application uses Drizzle ORM with SQLite for persistent message storage.
 ### Prerequisites
 
 - Node.js (version 18 or higher)
-- npm or pnpm package manager
+- pnpm package manager
 
 ### Installation
 
 1. Install dependencies:
 ```bash
-npm install
+pnpm install
 ```
 
 2. Generate the initial database schema:
 ```bash
-npm run db:generate
+pnpm run db:generate
 ```
 
 3. The database will be automatically created and migrated when you first run the application.
@@ -37,18 +37,18 @@ The application uses a simple `messages` table with the following structure:
 
 ### Database Management
 
-- `npm run db:generate` - Generate new migration files after schema changes
-- `npm run db:migrate` - Apply pending migrations to the database
-- `npm run db:studio` - Open Drizzle Studio for database inspection
+- `pnpm run db:generate` - Generate new migration files after schema changes
+- `pnpm run db:migrate` - Apply pending migrations to the database
+- `pnpm run db:studio` - Open Drizzle Studio for database inspection
 
 ### Development
 
-- `npm run dev` - Start the development server with watch mode
-- `npm run build` - Build and type-check the application
-- `npm run test` - Run tests in watch mode
-- `npm run test:run` - Run tests once
-- `npm run lint` - Check code formatting and style
-- `npm run lint:fix` - Fix automatic formatting issues
+- `pnpm run dev` - Start the development server with watch mode
+- `pnpm run build` - Build and type-check the application
+- `pnpm run test` - Run tests in watch mode
+- `pnpm run test:run` - Run tests once
+- `pnpm run lint` - Check code formatting and style
+- `pnpm run lint:fix` - Fix automatic formatting issues
 
 ## Environment Configuration
 
@@ -68,7 +68,7 @@ In development and production, the SQLite database file is created as `database.
 When you need to modify the database schema:
 
 1. Update the schema in `src/db/schema.ts`
-2. Generate a new migration: `npm run db:generate`
+2. Generate a new migration: `pnpm run db:generate`
 3. The migration will be automatically applied when the application starts
 
 ## Production Deployment
@@ -128,7 +128,7 @@ Consider migrating to PostgreSQL or MySQL for:
 To inspect the database contents:
 ```bash
 # Using Drizzle Studio (recommended)
-npm run db:studio
+pnpm run db:studio
 
 # Using SQLite CLI
 sqlite3 database.sqlite ".tables"
