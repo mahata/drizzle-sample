@@ -25,10 +25,10 @@ jobs:
         version: 10.13.1
         
     - name: Install dependencies
-      run: pnpm install
+      run: pnpm install --frozen-lockfile=false
       
     - name: Run tests
-      run: pnpm test
+      run: pnpm run test:run
       
     - name: Run build
       run: pnpm build
