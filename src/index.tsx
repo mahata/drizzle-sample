@@ -12,6 +12,7 @@ app.get("/", (c) => {
       <head>
         <title>Interactive Message App</title>
         <style
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: Static CSS content is safe
           dangerouslySetInnerHTML={{
             __html: `
             body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
@@ -57,6 +58,7 @@ app.get("/", (c) => {
         </div>
 
         <script
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: Static JavaScript content is safe
           dangerouslySetInnerHTML={{
             __html: `
             async function handleSubmit(event) {
