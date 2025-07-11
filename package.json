@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Learning Drizzle with Hono",
   "type": "module",
-  "main": "src/index.ts",
+  "main": "src/index.tsx",
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc --noEmit",

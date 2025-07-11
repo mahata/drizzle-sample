@@ -10,7 +10,9 @@
     "noUncheckedIndexedAccess": true,
     "isolatedModules": true,
     "skipLibCheck": true,
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx"
   },
   "include": ["src/**/*", "test/**/*"],
   "exclude": ["node_modules", "dist"]
