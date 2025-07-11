@@ -8,30 +8,37 @@ const messages: string[] = [];
 // Root page with form
 app.get("/", (c) => {
   return c.html(
-    <html>
+    <html lang="en">
       <head>
         <title>Interactive Message App</title>
-        <style>
-          {`
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
             body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
             .form-container { margin-bottom: 30px; }
             input[type="text"] { width: 300px; padding: 8px; margin-right: 10px; }
             button { padding: 8px 16px; cursor: pointer; }
             .messages { border: 1px solid #ccc; padding: 15px; min-height: 100px; background-color: #f9f9f9; }
             .message { margin-bottom: 5px; padding: 5px; background-color: white; border-radius: 3px; }
-          `}
-        </style>
+          `,
+          }}
+        />
       </head>
       <body>
         <h1>Interactive Message App</h1>
         <div class="form-container">
-          <form id="messageForm" method="post" action="/submit" onsubmit="return handleSubmit(event);">
-            <input 
-              type="text" 
-              id="messageInput" 
-              name="message" 
-              placeholder="Enter your message..." 
-              required 
+          <form
+            id="messageForm"
+            method="post"
+            action="/submit"
+            onsubmit="return handleSubmit(event);"
+          >
+            <input
+              type="text"
+              id="messageInput"
+              name="message"
+              placeholder="Enter your message..."
+              required
             />
             <button type="submit">Submit</button>
           </form>
@@ -42,15 +49,16 @@ app.get("/", (c) => {
             <p>No messages yet. Submit a message above!</p>
           ) : (
             messages.map((message, index) => (
-              <div key={index} class="message">
+              <div key={`msg-${index}-${message.slice(0, 10)}`} class="message">
                 {message}
               </div>
             ))
           )}
         </div>
-        
-        <script>
-          {`
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
             async function handleSubmit(event) {
               event.preventDefault();
               console.log('Form submitted via AJAX');
@@ -80,10 +88,11 @@ app.get("/", (c) => {
               
               return false;
             }
-          `}
-        </script>
+          `,
+          }}
+        />
       </body>
-    </html>
+    </html>,
   );
 });
 
@@ -91,11 +100,11 @@ app.get("/", (c) => {
 app.post("/submit", async (c) => {
   const body = await c.req.formData();
   const message = body.get("message") as string;
-  
-  if (message && message.trim()) {
+
+  if (message?.trim()) {
     messages.push(message.trim());
   }
-  
+
   // Return just the messages area HTML
   return c.html(
     <div>
@@ -104,12 +113,12 @@ app.post("/submit", async (c) => {
         <p>No messages yet. Submit a message above!</p>
       ) : (
         messages.map((message, index) => (
-          <div key={index} class="message">
+          <div key={`msg-${index}-${message.slice(0, 10)}`} class="message">
             {message}
           </div>
         ))
       )}
-    </div>
+    </div>,
   );
 });
 
