@@ -23,10 +23,10 @@ importers:
         version: 24.0.12
       '@vitest/browser':
         specifier: ^3.2.4
-        version: 3.2.4(playwright@1.53.2)(vite@7.0.3(@types/node@24.0.12)(tsx@4.20.3))(vitest@3.2.4)
+        version: 3.2.4(playwright@1.55.1)(vite@7.0.3(@types/node@24.0.12)(tsx@4.20.3))(vitest@3.2.4)
       playwright:
-        specifier: ^1.53.2
-        version: 1.53.2
+        specifier: ^1.55.1
+        version: 1.55.1
       tsx:
         specifier: ^4.20.3
         version: 4.20.3
@@ -589,13 +589,13 @@ packages:
     resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
     engines: {node: '>=12'}
 
-  playwright-core@1.53.2:
-    resolution: {integrity: sha512-ox/OytMy+2w1jcYEYlOo1Hhp8hZkLCximMTUTMBXjGUA1KoFfiSZ+DU+3a739jsPY0yoKH2TFy9S2fsJas8yAw==}
+  playwright-core@1.55.1:
+    resolution: {integrity: sha512-Z6Mh9mkwX+zxSlHqdr5AOcJnfp+xUWLCt9uKV18fhzA8eyxUd8NUWzAjxUh55RZKSYwDGX0cfaySdhZJGMoJ+w==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.53.2:
-    resolution: {integrity: sha512-6K/qQxVFuVQhRQhFsVZ9fGeatxirtrpPgxzBYWyZLEXJzqYwuL4fuNmfOfD5et1tJE4GScKyPNeLhZeRwuTU3A==}
+  playwright@1.55.1:
+    resolution: {integrity: sha512-cJW4Xd/G3v5ovXtJJ52MAOclqeac9S/aGGgRzLabuF8TnIb6xHvMzKIa6JmrRzUkeXJgfL1MhukP0NK6l39h3A==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -993,7 +993,7 @@ snapshots:
     dependencies:
       undici-types: 7.8.0
 
-  '@vitest/browser@3.2.4(playwright@1.53.2)(vite@7.0.3(@types/node@24.0.12)(tsx@4.20.3))(vitest@3.2.4)':
+  '@vitest/browser@3.2.4(playwright@1.55.1)(vite@7.0.3(@types/node@24.0.12)(tsx@4.20.3))(vitest@3.2.4)':
     dependencies:
       '@testing-library/dom': 10.4.0
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.0)
@@ -1005,7 +1005,7 @@ snapshots:
       vitest: 3.2.4(@types/node@24.0.12)(@vitest/browser@3.2.4)(tsx@4.20.3)
       ws: 8.18.3
     optionalDependencies:
-      playwright: 1.53.2
+      playwright: 1.55.1
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -1182,11 +1182,11 @@ snapshots:
 
   picomatch@4.0.2: {}
 
-  playwright-core@1.53.2: {}
+  playwright-core@1.55.1: {}
 
-  playwright@1.53.2:
+  playwright@1.55.1:
     dependencies:
-      playwright-core: 1.53.2
+      playwright-core: 1.55.1
     optionalDependencies:
       fsevents: 2.3.2
 
@@ -1343,7 +1343,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 24.0.12
-      '@vitest/browser': 3.2.4(playwright@1.53.2)(vite@7.0.3(@types/node@24.0.12)(tsx@4.20.3))(vitest@3.2.4)
+      '@vitest/browser': 3.2.4(playwright@1.55.1)(vite@7.0.3(@types/node@24.0.12)(tsx@4.20.3))(vitest@3.2.4)
     transitivePeerDependencies:
       - jiti
       - less
