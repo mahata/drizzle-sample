@@ -9,15 +9,15 @@ importers:
   .:
     dependencies:
       hono:
-        specifier: ^4.8.4
-        version: 4.8.4
+        specifier: ^4.11.10
+        version: 4.11.10
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.1.1
         version: 2.1.1
       '@hono/node-server':
         specifier: ^1.15.0
-        version: 1.15.0(hono@4.8.4)
+        version: 1.15.0(hono@4.11.10)
       '@types/node':
         specifier: ^24.0.12
         version: 24.0.12
@@ -543,8 +543,8 @@ packages:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
 
-  hono@4.8.4:
-    resolution: {integrity: sha512-KOIBp1+iUs0HrKztM4EHiB2UtzZDTBihDtOF5K6+WaJjCPeaW4Q92R8j63jOhvJI5+tZSMuKD9REVEXXY9illg==}
+  hono@4.11.10:
+    resolution: {integrity: sha512-kyWP5PAiMooEvGrA9jcD3IXF7ATu8+o7B3KCbPXid5se52NPqnOpM/r9qeW2heMnOekF4kqR1fXJqCYeCLKrZg==}
     engines: {node: '>=16.9.0'}
 
   js-tokens@4.0.0:
@@ -896,9 +896,9 @@ snapshots:
   '@esbuild/win32-x64@0.25.6':
     optional: true
 
-  '@hono/node-server@1.15.0(hono@4.8.4)':
+  '@hono/node-server@1.15.0(hono@4.11.10)':
     dependencies:
-      hono: 4.8.4
+      hono: 4.11.10
 
   '@jridgewell/sourcemap-codec@1.5.4': {}
 
@@ -1154,7 +1154,7 @@ snapshots:
 
   has-flag@4.0.0: {}
 
-  hono@4.8.4: {}
+  hono@4.11.10: {}
 
   js-tokens@4.0.0: {}
 
